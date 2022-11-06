@@ -1,4 +1,4 @@
-#FriendShape
+# FriendShape
 
 FriendShape is a game in which players connect with each other to form edges in a social graph, in order to draw a graph that represents a picture.
 
