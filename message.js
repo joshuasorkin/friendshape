@@ -13,7 +13,7 @@ class Message{
     }
 
     async send(message,walletHash){
-        const conv = await client.conversations.newConversation(walletHash);
+        const conv = await this.client.conversations.newConversation(walletHash);
         let result = await conv.send(message);
         console.log({result});
         console.log(result.senderAddress);
