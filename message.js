@@ -20,6 +20,15 @@ class Message{
         console.log(result.senderAddress);
     }
 
+    async listen(){
+        const conversation = await xmtp.conversations.newConversation(process.env.TEST_WALLET);
+        for await (const message of await conversation.streamMessages()){
+            if(message.senderAddress === xmtp.address){
+                continue;
+            }
+            console.log(`new message from ${message.senderAddress}: ${message.content}`);
+        }
+    }
 }
 
 module.exports = Message;
