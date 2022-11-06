@@ -9,11 +9,12 @@ class Message{
     }
 
     async initializeClient(){
-        return await Client.create(wallet);
+        //return await Client.create(wallet);
     }
 
     async send(message,walletHash){
-        const conv = await this.client.conversations.newConversation(walletHash);
+        const client = await Client.create(wallet);
+        const conv = await client.conversations.newConversation(walletHash);
         let result = await conv.send(message);
         console.log({result});
         console.log(result.senderAddress);

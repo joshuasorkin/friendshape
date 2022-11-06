@@ -10,10 +10,10 @@ router.get('/action', function(req, res, next) {
   message.send(req.query.message,req.query.wallet);
 });
 
-/*
+
 router.post('/', function(req,res, next){
-  message.send(req.body);
+  message.send(req.body.message,req.body.wallet);
 });
-*/
+
 
 module.exports = router;
