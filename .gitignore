@@ -1,0 +1,11 @@
+.DS_STORE
+node_modules
+npm-debug.log*
+.env.*
+*.env
+*.sql
+*.pgsql
+*.dump
+*.sh
+*.ignore
+*.log
