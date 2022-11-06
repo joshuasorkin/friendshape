@@ -24,6 +24,7 @@ class Message{
         const conversation = await xmtp.conversations.newConversation(process.env.TEST_WALLET);
         for await (const message of await conversation.streamMessages()){
             if(message.senderAddress === xmtp.address){
+                console.log('i sent myself a message');
                 continue;
             }
             console.log(`new message from ${message.senderAddress}: ${message.content}`);

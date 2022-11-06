@@ -11,7 +11,7 @@ require('dotenv');
 
 const Message = require('../message');
 const message = new Message();
-
+message.listen();
 
 /**
  * Get port from environment and store in Express.
