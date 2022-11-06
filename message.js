@@ -21,6 +21,7 @@ class Message{
     }
 
     async listen(){
+        console.log(process.env.TEST_WALLET);
         const conversation = await xmtp.conversations.newConversation(process.env.TEST_WALLET);
         for await (const message of await conversation.streamMessages()){
             if(message.senderAddress === xmtp.address){
