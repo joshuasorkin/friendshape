@@ -5,7 +5,7 @@ const Client = xmtp.Client;
 class Message{
 
     constructor(){
-        this.client = initializeClient();
+        this.client = this.initializeClient();
     }
 
     async initializeClient(){
