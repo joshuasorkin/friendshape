@@ -19,10 +19,10 @@ class Message{
         console.log({result});
         console.log(result.senderAddress);
     }
-
     async listen(){
         console.log(process.env.TEST_WALLET);
-        const conversation = await xmtp.conversations.newConversation(process.env.TEST_WALLET);
+        const client = await Client.create(wallet);
+        const conversation = await client.conversations.newConversation(process.env.TEST_WALLET);
         for await (const message of await conversation.streamMessages()){
             if(message.senderAddress === xmtp.address){
                 console.log('i sent myself a message');
